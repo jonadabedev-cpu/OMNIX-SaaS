@@ -237,6 +237,10 @@ omnix/
 │   ├── entities/
 │   ├── security/
 │   └── config/
+│   └── dto/
+│   └── exceptions/
+│   └── utils/
+│   └── enums/
 │
 ├── frontend/
 │   ├── src/
