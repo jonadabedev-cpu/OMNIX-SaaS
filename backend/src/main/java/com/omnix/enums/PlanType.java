@@ -3,7 +3,7 @@ package com.omnix.enums;
 public enum PlanType {
 
     //Plano gratuido do OMNIX- pagina simple e links compartilháveis 
-    BASICO("Omnix Basico", false, false),
+    BASIC("Omnix Basico", false, false),
 
     // Plano intermediário - RSVP e Layouts premius 
     CLASSIC("Omnix Classic", true, false),

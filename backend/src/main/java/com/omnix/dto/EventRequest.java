@@ -1,5 +1,30 @@
 package com.omnix.dto;
 
-public record EventRequest() {
+import com.omnix.enums.EventType;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-}
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public record EventRequest(
+
+        @NotBlank(message = "Título obrigatório")
+        String title,
+
+        String description,
+
+        @NotNull(message = "Data do evento obrigatória")
+        @FutureOrPresent(message = "Data não pode ser no passado")
+        LocalDate eventDate,
+
+        LocalTime eventTime,
+
+        String address,
+
+        String bannerUrl,
+
+        @NotNull(message = "Tipo do evento obrigatório")
+        EventType type
+) {}

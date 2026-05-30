@@ -2,19 +2,18 @@ package com.omnix.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
-public record RsvpRequest(
-
-        @NotNull(message = "ID do evento obrigatório")
-        Long eventId,
+public record RegisterRequest(
 
         @NotBlank(message = "Nome obrigatório")
-        String guestName,
+        String name,
 
         @NotBlank(message = "Email obrigatório")
         @Email(message = "Email inválido")
         String email,
 
-        String phone
+        @NotBlank(message = "Senha obrigatória")
+        @Size(min = 6, message = "Senha deve ter no mínimo 6 caracteres")
+        String password
 ) {}

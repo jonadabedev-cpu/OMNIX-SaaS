@@ -1,5 +1,5 @@
 package com.omnix.dto;
 
-public record AuthResponse() {
-
-}
+public record AuthResponse(
+        String token
+) {}

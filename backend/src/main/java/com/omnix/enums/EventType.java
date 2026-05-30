@@ -6,7 +6,7 @@ public enum EventType {
     CORPORATE("Coporativo"),
     GRADUATION("Formatura"),
     PARTY("Festa"),
-    OUTHER("Outros");
+    OTHER("Outros");
 
     private final String displayName;
 
