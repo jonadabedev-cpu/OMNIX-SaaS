@@ -89,4 +89,12 @@ public class Event {
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
     }
+
+    // Adicione este campo junto aos outros campos da entidade
+
+    // Template visual da página pública (1 a 10)
+    // BASIC → 1-2 | CLASSIC → 1-6 | BLACK → 1-10
+    @Column(nullable = false)
+    @Builder.Default
+    private Integer template = 1;
 }

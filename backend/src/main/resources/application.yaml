@@ -1,3 +1,39 @@
 spring:
   application:
     name: omnix
+
+  # Ativa o perfil dev por padrão durante desenvolvimento
+  profiles:
+    active: dev
+
+  # JPA
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # Email SMTP (produção)
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# JWT
+jwt:
+  secret: ${JWT_SECRET}
+  expiration: 86400000 # 24 horas em ms
+
+# Servidor
+server:
+  port: 8080

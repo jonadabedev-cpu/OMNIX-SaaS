@@ -17,6 +17,7 @@ public record EventResponse(
         String address,
         String bannerUrl,
         EventType type,
+        Integer template, // retorna o template para o Angular renderizar
         LocalDateTime createdAt
 ) {
     public static EventResponse from(Event event) {
@@ -30,6 +31,7 @@ public record EventResponse(
                 event.getAddress(),
                 event.getBannerUrl(),
                 event.getType(),
+                event.getTemplate(),
                 event.getCreatedAt()
         );
     }

@@ -41,6 +41,7 @@ public class SecurityConfig {
                 // Swagger — apenas em desenvolvimento
                 .requestMatchers(
                     "/v3/api-docs/**",
+                    "/h2-console/**", 
                     "/swagger-ui/**",
                     "/swagger-ui.html"
                 ).permitAll()
@@ -48,6 +49,7 @@ public class SecurityConfig {
                 // Todas as outras rotas exigem autenticação
                 .anyRequest().authenticated()
             )
+            .headers(h -> h.frameOptions(f -> f.disable()))
             .addFilterBefore(jwtAuthFilter,
                     UsernamePasswordAuthenticationFilter.class);
 
